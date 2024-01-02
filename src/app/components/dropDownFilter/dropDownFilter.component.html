@@ -1,0 +1,13 @@
+<div class="search-area"  (mouseenter)="onMouseEnter()" (mouseleave)="clearHoverEffect()">
+  <div class="search-bar" #searchBar>
+    <input type="text" placeholder="search" id="query" (input)="search($event)" [formControl]="inputValue"
+      (focus)="loadSuggestions()" (click)="loadSuggestions()"
+      [readOnly]="isWordSelected" [disabled]="isWordSelected" >
+    <mat-icon *ngIf="!isSearchBarFocused && !isWordSelected">expand_more</mat-icon>
+    <mat-icon *ngIf="isSearchBarFocused && !isWordSelected">expand_less</mat-icon>
+    <mat-icon *ngIf="isWordSelected" (click)="enableSearch()">close</mat-icon>
+  </div>
+  <ul>
+    <li *ngFor="let word of foundWords$ | async" (click)="setSelectedWord(word)">{{ word | titlecase}}</li>
+  </ul>
+</div>

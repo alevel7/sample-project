@@ -1,0 +1,82 @@
+:host {
+  width: 40%;
+  background-color: red;
+}
+$search-bar-hover-color: rgb(36, 184, 36);
+
+.search-area {
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background: white;
+  width: 40%;
+  max-height: 40vh;
+  margin: auto;
+
+  .search-bar {
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 2px -1px 1px gray, -2px -1px 1px gray;
+    padding: 0.5em;
+
+    input {
+      width: 100%;
+      outline: none;
+      border: none;
+      padding: 0.5em;
+      font-size: large;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    width: 100%;
+    max-height: 35vh;
+    overflow: scroll;
+    scroll-behavior: smooth;
+
+    li {
+      padding: 0.8rem;
+      cursor: pointer;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: lightgray;
+      }
+    }
+  }
+}
+
+.hoverClass {
+  &:hover {
+    background-color: $search-bar-hover-color;
+    color: white;
+    input {
+      background-color: $search-bar-hover-color;
+      &::placeholder {
+        color: white;
+      }
+    }
+  }
+}
+
+.deepGreen {
+  background-color: green;
+  input {
+    background-color: green;
+    color: white;
+  }
+  mat-icon {
+    color: white;
+    cursor: pointer;
+  }
+}
+.bgWhite {
+  background-color: white;
+}
+
+.bgHover {
+  background-color: $search-bar-hover-color;
+}
